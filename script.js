@@ -198,7 +198,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ────────────────────────────────────────
-       7. SMOOTH ACTIVE NAV LINK
+       7. DYNAMIC SPOTLIGHT HOVER EFFECT
+    ──────────────────────────────────────── */
+    const hoverCards = document.querySelectorAll('.feature-card, .step, .review-card');
+    hoverCards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+
+    /* ────────────────────────────────────────
+       8. SMOOTH ACTIVE NAV LINK
     ──────────────────────────────────────── */
     const sections  = document.querySelectorAll('section[id], header[id]');
     const navLinks  = document.querySelectorAll('.nav-links a');
@@ -214,5 +228,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.4 });
 
     sections.forEach(s => sectionObs.observe(s));
+
+
+    /* ────────────────────────────────────────
+       9. CUSTOM CURSOR
+    ──────────────────────────────────────── */
+    const cursor = document.getElementById('custom-cursor');
+    if (cursor) {
+        let cx = window.innerWidth / 2;
+        let cy = window.innerHeight / 2;
+        let mx = cx;
+        let my = cy;
+
+        // Smooth cursor tracking loop
+        function loopCursor() {
+            cx += (mx - cx) * 0.25;
+            cy += (my - cy) * 0.25;
+            cursor.style.transform = `translate3d(calc(${cx}px - 50%), calc(${cy}px - 50%), 0)`;
+            requestAnimationFrame(loopCursor);
+        }
+        requestAnimationFrame(loopCursor);
+
+        window.addEventListener('mousemove', e => {
+            mx = e.clientX;
+            my = e.clientY;
+        });
+
+        const interactables = document.querySelectorAll('a, button');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+    }
 
 });
