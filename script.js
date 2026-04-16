@@ -68,8 +68,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // draw connecting lines
         for (let i = 0; i < particles.length; i++) {
+            const a = particles[i];
+            
+            // Connect to mouse
+            const hdx = a.x - mouseX, hdy = a.y - mouseY;
+            const hDist = hdx * hdx + hdy * hdy;
+            if (hDist < 12000) {
+                const opacity = (1 - hDist / 12000) * 0.25;
+                ctx.beginPath();
+                ctx.moveTo(a.x, a.y);
+                ctx.lineTo(mouseX, mouseY);
+                ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+                ctx.lineWidth = 1.0;
+                ctx.stroke();
+            }
+
+            // Connect to other particles
             for (let j = i + 1; j < particles.length; j++) {
-                const a = particles[i], b = particles[j];
+                const b = particles[j];
                 const dx = a.x - b.x, dy = a.y - b.y;
                 const d2 = dx * dx + dy * dy;
                 if (d2 < 14000) {
@@ -92,6 +108,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const rect = canvas.getBoundingClientRect();
         mouseX = e.clientX - rect.left;
         mouseY = e.clientY - rect.top;
+
+        // Interactive 3D Glitch
+        const glitch = document.querySelector('.glitch');
+        if (glitch) {
+            const gx = (e.clientX / window.innerWidth - 0.5) * 12;
+            const gy = (e.clientY / window.innerHeight - 0.5) * 12;
+            glitch.style.setProperty('--gx', `${gx}px`);
+            glitch.style.setProperty('--gy', `${gy}px`);
+        }
+
+        // Parallax Download Rings
+        const rings = document.querySelector('.download-rings');
+        if (rings) {
+            const rx = (e.clientX / window.innerWidth - 0.5) * -60;
+            const ry = (e.clientY / window.innerHeight - 0.5) * -60;
+            rings.style.transform = `translate(${rx}px, ${ry}px)`;
+        }
     });
 
 
