@@ -1,5 +1,5 @@
 /* ================================================================
-   REVO BOT — script.js
+   REVOSDK — script.js  (enhanced)
    ================================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -292,6 +292,59 @@ document.addEventListener('DOMContentLoaded', () => {
             el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
         });
+    }
+
+
+    /* ────────────────────────────────────────
+       10. 3D TILT — purchase card
+    ──────────────────────────────────────── */
+    const purchaseCard = document.querySelector('.revosdk-purchase-card');
+    if (purchaseCard) {
+        purchaseCard.addEventListener('mousemove', e => {
+            const rect = purchaseCard.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const dx = (e.clientX - cx) / (rect.width / 2);
+            const dy = (e.clientY - cy) / (rect.height / 2);
+            const rotX = dy * -8;
+            const rotY = dx * 8;
+            purchaseCard.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.015)`;
+        });
+        purchaseCard.addEventListener('mouseleave', () => {
+            purchaseCard.style.transform = '';
+            purchaseCard.style.transition = 'transform 0.6s var(--ease-out)';
+            setTimeout(() => { purchaseCard.style.transition = ''; }, 650);
+        });
+    }
+
+    /* ────────────────────────────────────────
+       11. FLOATING BOT ICONS
+    ──────────────────────────────────────── */
+    document.querySelectorAll('.revosdk-bot-icon').forEach((el, i) => {
+        el.style.animation = `float-icon 3.5s ease-in-out infinite ${i * 0.6}s`;
+    });
+
+    const floatStyle = document.createElement('style');
+    floatStyle.textContent = `
+        @keyframes float-icon {
+            0%,100% { transform: translateY(0); }
+            50%      { transform: translateY(-5px); }
+        }
+    `;
+    document.head.appendChild(floatStyle);
+
+    /* ────────────────────────────────────────
+       12. TYPING EFFECT — product name label
+    ──────────────────────────────────────── */
+    const typingEl = document.querySelector('.purchase-product-name');
+    if (typingEl) {
+        const full = typingEl.textContent;
+        typingEl.textContent = '';
+        let i = 0;
+        const typeInt = setInterval(() => {
+            typingEl.textContent += full[i++];
+            if (i >= full.length) clearInterval(typeInt);
+        }, 55);
     }
 
 });
